@@ -42,7 +42,7 @@ public class ResultService {
     var finalTimeRabbit = LocalDateTime.now();
     var rabbitTime = ChronoUnit.MILLIS.between(initialTimeRabbit, finalTimeRabbit);
 
-    var result = new Result(rabbitTime, 1L, numberOfEvents);
+    var result = new Result(rabbitTime, springTime, numberOfEvents);
     System.out.println(result);
     return result;
   }
