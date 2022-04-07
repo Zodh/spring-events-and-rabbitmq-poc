@@ -1,7 +1,9 @@
 package br.com.felipec.rabbitspringeventspoc.config;
 
-import org.springframework.amqp.core.*;
+import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.Binding.DestinationType;
+import org.springframework.amqp.core.DirectExchange;
+import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -24,7 +26,8 @@ public class RabbitMQConfig {
 
   @Bean
   Binding callerBinding() {
-    return new Binding(callerExchange().getName(), DestinationType.EXCHANGE, callerExchange().getName(), CALLER_ROUTING_KEY, null);
+    return new Binding(callerExchange().getName(), DestinationType.EXCHANGE,
+        callerExchange().getName(), CALLER_ROUTING_KEY, null);
   }
 
 }

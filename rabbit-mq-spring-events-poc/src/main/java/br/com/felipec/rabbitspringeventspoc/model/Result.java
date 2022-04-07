@@ -6,14 +6,17 @@ import lombok.Getter;
 @Getter
 public class Result {
 
+  private final Integer sePublishedMessages;
+  private final Integer rabbitPublishedMessages;
   private final Long rabbitTimeSpentInMs;
   private final Long springTimeSpentInMs;
-  private final Integer numberOfEvents;
 
-  public Result(Long rabbitTimeSpentInMs, Long springTimeSpentInMs, Integer numberOfEvents) {
+  public Result(Integer sePublishedMessages, Integer rabbitPublishedMessages,
+      Long rabbitTimeSpentInMs, Long springTimeSpentInMs) {
+    this.sePublishedMessages = sePublishedMessages;
+    this.rabbitPublishedMessages = rabbitPublishedMessages;
     this.rabbitTimeSpentInMs = rabbitTimeSpentInMs;
     this.springTimeSpentInMs = springTimeSpentInMs;
-    this.numberOfEvents = numberOfEvents;
   }
 
   @Override
