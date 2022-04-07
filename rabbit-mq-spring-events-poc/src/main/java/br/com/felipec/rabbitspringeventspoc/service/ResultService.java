@@ -3,13 +3,8 @@ package br.com.felipec.rabbitspringeventspoc.service;
 import br.com.felipec.rabbitspringeventspoc.model.Result;
 import br.com.felipec.rabbitspringeventspoc.service.rabbitmq.RabbitService;
 import br.com.felipec.rabbitspringeventspoc.service.spring.events.SpringEventService;
-import br.com.felipec.rabbitspringeventspoc.threads.TimeGather;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.Period;
 import java.time.temporal.ChronoUnit;
-import org.joda.time.DateTime;
-import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,7 +32,6 @@ public class ResultService {
     System.out.println("Spring Events Finishing");
     var finalTimeSpringEvent = LocalDateTime.now();
     var springTime = ChronoUnit.MILLIS.between(initialTimeSpringEvent, finalTimeSpringEvent);
-
 
     var initialTimeRabbit = LocalDateTime.now();
     System.out.println("RabbitMQ Starting");
